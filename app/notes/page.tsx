@@ -18,8 +18,8 @@ export default async function Notes({
   const page = Number(params.page ?? 1);
   const query = String(params.query ?? '')
   await queryClient.prefetchQuery({
-    queryKey: ["note",query,page],
-    queryFn: () => fetchNotes("",page),
+    queryKey: ["notes",query,page],
+    queryFn: () => fetchNotes(query,page),
   });
 
   return (
